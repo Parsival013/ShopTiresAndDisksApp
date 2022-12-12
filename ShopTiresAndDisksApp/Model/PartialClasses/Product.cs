@@ -11,11 +11,11 @@ namespace ShopTiresAndDisksApp.Model
         public string ImagePath { get {
                 if (Image==null)
                 {
-                    return "..\\Images\\picture.png";
+                    return "/Assets/Images/picture.png";
                 }
                 else
                 {
-                    return "..\\Images\\" + Image;
+                    return "/Assets/Images" + Image;
                 }
                 
             } }
@@ -23,9 +23,28 @@ namespace ShopTiresAndDisksApp.Model
         {
             get
             {
+                string materials = "Материалы: ";
+                List<string> arrayMaterials = new List<string> { };
+                List<ProductMaterial> arrayActiveProduct = ProductMaterial.Where(x => x.ProductID == ID).ToList();
+                foreach (var item in arrayActiveProduct)
+                {
+                    arrayMaterials.Add(item.Material.Title.ToString());
+                }
+                materials += String.Join(",", arrayMaterials);
+                return materials;
+            }
+        }
+        
+            public string CostProduct
+        {
+            get
+            {
+                
+
                 string materials = "";
                 return materials;
             }
         }
     }
+
 }
