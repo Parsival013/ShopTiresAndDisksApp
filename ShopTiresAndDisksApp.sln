@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopTiresAndDisksApp", "ShopTiresAndDisksApp\ShopTiresAndDisksApp.csproj", "{1C2B5E0D-B3DA-4274-AD1A-59C5725DD21E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C2B5E0D-B3DA-4274-AD1A-59C5725DD21E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2B5E0D-B3DA-4274-AD1A-59C5725DD21E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2B5E0D-B3DA-4274-AD1A-59C5725DD21E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2B5E0D-B3DA-4274-AD1A-59C5725DD21E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A35A686-9D3E-44A5-AE2D-85D275B3363B}
+	EndGlobalSection
+EndGlobal
