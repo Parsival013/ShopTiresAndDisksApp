@@ -34,7 +34,7 @@
         <ListView Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border Width="2" CornerRadius="5">
+                    <Border CornerRadius="5">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*"/>
