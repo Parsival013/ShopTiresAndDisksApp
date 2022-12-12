@@ -35,15 +35,19 @@ namespace ShopTiresAndDisksApp.Model
             }
         }
         
-            public string CostProduct
+            public double CostProduct
         {
             get
             {
-                
-
-                string materials = "";
-                return materials;
+                double costProduct = 0;
+                List<ProductMaterial> arrayActiveProduct = ProductMaterial.Where(x => x.ProductID == ID).ToList();
+                foreach (var item in arrayActiveProduct)
+                {
+                    costProduct += Convert.ToDouble(item.Count) * Convert.ToDouble(item.Material.Cost);
+                }
+                return costProduct;
             }
+
         }
     }
 
