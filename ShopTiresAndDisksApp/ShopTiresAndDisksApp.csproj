@@ -98,6 +98,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\PartialClasses\Product.cs" />
     <Compile Include="Model\Product.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
@@ -188,6 +189,72 @@
     <Resource Include="Assets\Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Images\products\tire_0.jpg" />
+    <Resource Include="Assets\Images\products\tire_1.jpg" />
+    <Resource Include="Assets\Images\products\tire_10.jpg" />
+    <Resource Include="Assets\Images\products\tire_11.jpg" />
+    <Resource Include="Assets\Images\products\tire_12.jpg" />
+    <Resource Include="Assets\Images\products\tire_13.jpg" />
+    <Resource Include="Assets\Images\products\tire_14.jpg" />
+    <Resource Include="Assets\Images\products\tire_15.jpg" />
+    <Resource Include="Assets\Images\products\tire_16.jpg" />
+    <Resource Include="Assets\Images\products\tire_17.jpg" />
+    <Resource Include="Assets\Images\products\tire_18.jpg" />
+    <Resource Include="Assets\Images\products\tire_19.jpg" />
+    <Resource Include="Assets\Images\products\tire_2.jpg" />
+    <Resource Include="Assets\Images\products\tire_20.jpg" />
+    <Resource Include="Assets\Images\products\tire_21.jpg" />
+    <Resource Include="Assets\Images\products\tire_22.jpg" />
+    <Resource Include="Assets\Images\products\tire_23.jpg" />
+    <Resource Include="Assets\Images\products\tire_24.jpg" />
+    <Resource Include="Assets\Images\products\tire_25.jpg" />
+    <Resource Include="Assets\Images\products\tire_26.jpg" />
+    <Resource Include="Assets\Images\products\tire_27.jpg" />
+    <Resource Include="Assets\Images\products\tire_28.jpg" />
+    <Resource Include="Assets\Images\products\tire_29.jpg" />
+    <Resource Include="Assets\Images\products\tire_3.jpg" />
+    <Resource Include="Assets\Images\products\tire_30.jpg" />
+    <Resource Include="Assets\Images\products\tire_31.jpg" />
+    <Resource Include="Assets\Images\products\tire_32.jpg" />
+    <Resource Include="Assets\Images\products\tire_33.jpg" />
+    <Resource Include="Assets\Images\products\tire_34.jpg" />
+    <Resource Include="Assets\Images\products\tire_35.jpg" />
+    <Resource Include="Assets\Images\products\tire_36.jpg" />
+    <Resource Include="Assets\Images\products\tire_37.jpg" />
+    <Resource Include="Assets\Images\products\tire_38.jpg" />
+    <Resource Include="Assets\Images\products\tire_39.jpg" />
+    <Resource Include="Assets\Images\products\tire_4.jpg" />
+    <Resource Include="Assets\Images\products\tire_40.jpg" />
+    <Resource Include="Assets\Images\products\tire_41.jpg" />
+    <Resource Include="Assets\Images\products\tire_42.jpg" />
+    <Resource Include="Assets\Images\products\tire_43.jpg" />
+    <Resource Include="Assets\Images\products\tire_44.jpg" />
+    <Resource Include="Assets\Images\products\tire_45.jpg" />
+    <Resource Include="Assets\Images\products\tire_46.jpg" />
+    <Resource Include="Assets\Images\products\tire_47.jpg" />
+    <Resource Include="Assets\Images\products\tire_48.jpg" />
+    <Resource Include="Assets\Images\products\tire_49.jpg" />
+    <Resource Include="Assets\Images\products\tire_5.jpg" />
+    <Resource Include="Assets\Images\products\tire_50.jpg" />
+    <Resource Include="Assets\Images\products\tire_51.jpg" />
+    <Resource Include="Assets\Images\products\tire_52.jpg" />
+    <Resource Include="Assets\Images\products\tire_53.jpg" />
+    <Resource Include="Assets\Images\products\tire_54.jpg" />
+    <Resource Include="Assets\Images\products\tire_55.jpg" />
+    <Resource Include="Assets\Images\products\tire_56.jpg" />
+    <Resource Include="Assets\Images\products\tire_57.jpg" />
+    <Resource Include="Assets\Images\products\tire_58.jpg" />
+    <Resource Include="Assets\Images\products\tire_59.jpg" />
+    <Resource Include="Assets\Images\products\tire_6.jpg" />
+    <Resource Include="Assets\Images\products\tire_60.jpg" />
+    <Resource Include="Assets\Images\products\tire_61.jpg" />
+    <Resource Include="Assets\Images\products\tire_62.jpg" />
+    <Resource Include="Assets\Images\products\tire_63.jpg" />
+    <Resource Include="Assets\Images\products\tire_64.jpg" />
+    <Resource Include="Assets\Images\products\tire_7.jpg" />
+    <Resource Include="Assets\Images\products\tire_8.jpg" />
+    <Resource Include="Assets\Images\products\tire_9.jpg" />
+    <Resource Include="Assets\Images\picture.png" />
     <Content Include="Model\ModelDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelDB.Context.cs</LastGenOutput>

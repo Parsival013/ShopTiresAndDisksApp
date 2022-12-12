@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopTiresAndDisksApp.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace ShopTiresAndDisksApp.View.Pages
     /// </summary>
     public partial class ProductPage : Page
     {
+        Core db = new Core();
         public ProductPage()
         {
             InitializeComponent();
+            ProductListView.ItemsSource = db.context.Product.ToList();
         }
     }
 }

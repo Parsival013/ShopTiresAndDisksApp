@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShopTiresAndDisksApp.Model
 {
-    class Core
+    public class Core
     {
         public TiresCompanyEntities context = new TiresCompanyEntities();
     }
