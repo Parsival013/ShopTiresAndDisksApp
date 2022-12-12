@@ -6,9 +6,61 @@
       xmlns:local="clr-namespace:ShopTiresAndDisksApp.View.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProductPage">
+      Title="Список товаров">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="SearchTextBox"/>
+            <ComboBox x:Name="SortComboBox" Grid.Column="1">
+                <ComboBoxItem>
+                    <TextBlock Text="По возрастанию"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="По убыванию"/>
+                </ComboBoxItem>
+            </ComboBox>
+            <ComboBox x:Name="FilterComboBox" Grid.Column="2"></ComboBox>
+        </Grid>
+        <ListView Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Width="2" CornerRadius="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="10*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding}"/>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding}"/>
+                                    <TextBlock Text="|"/>
+                                    <TextBlock Text="{Binding}"/>
+                                </StackPanel>
+                                <TextBlock Text="{Binding}" Grid.Row="1"/>
+                                <TextBlock Text="{Binding}" Grid.Row="2"/>
+                            </Grid>
+                            <TextBlock Text="{Binding}" Grid.Column="2"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>
