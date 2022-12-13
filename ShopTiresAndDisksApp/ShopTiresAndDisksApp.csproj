@@ -120,6 +120,7 @@
     <Compile Include="Model\Supplier.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\PageItem.cs" />
     <Compile Include="View\Pages\ProductPage.xaml.cs">
       <DependentUpon>ProductPage.xaml</DependentUpon>
     </Compile>
