@@ -62,7 +62,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <StackPanel Grid.Row="2">
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
             <TextBlock MouseLeftButtonDown="PrevTextBlockMouseLeftButtonDown" x:Name="PrevTextBlock" VerticalAlignment="Center" Text="&lt;" Margin="0 0 2 0" FontSize="16"/>
             <ListView x:Name="PaginationListView" BorderThickness="0">
                 <ListView.ItemTemplate>
