@@ -22,9 +22,9 @@
             </Grid.ColumnDefinitions>
             <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBoxTextChanged"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
-                <ComboBox x:Name="SortComboBox" SelectedIndex="0" SelectionChanged="SortComboBoxSelectionChanged">
+                <ComboBox x:Name="SortComboBox" SelectionChanged="SortComboBoxSelectionChanged">
                     <ComboBoxItem>
-                        <TextBlock Text="без фильтрации"/>
+                        <TextBlock Text="Без сортировки"/>
                     </ComboBoxItem>
                     <ComboBoxItem>
                     <TextBlock Text="По наименованию"/>
@@ -37,7 +37,17 @@
                 <Button Content="↓" x:Name="OrderButton" Click="OrderButtonClick"/>
             </StackPanel>
             
-            <ComboBox x:Name="FilterComboBox" Grid.Column="2"></ComboBox>
+            <ComboBox x:Name="FilterComboBox" Grid.Column="2" SelectionChanged="FilterComboBoxSelectionChanged">
+                <ComboBoxItem>
+                    <TextBlock Text="все типы"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="шины"/>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="диски"/>
+                </ComboBoxItem>
+            </ComboBox>
         </Grid>
         <ListView Grid.Row="1" x:Name="ProductListView">
             <ListView.ItemTemplate>
@@ -49,7 +59,7 @@
                                 <ColumnDefinition Width="10*"/>
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding ImagePath}" Width="100"/>
+                            <Image Source="{Binding Product.ImagePath}" Width="100"/>
                             <Grid Grid.Column="1" Margin="15,0,0,0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>

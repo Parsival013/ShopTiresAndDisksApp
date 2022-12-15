@@ -21,27 +21,46 @@ namespace ShopTiresAndDisksApp.View.Pages
     /// </summary>
     public partial class ProductPage : Page
     {
+
         bool check = true;
         int page = 1;
         Core db = new Core();
+        int materialId;
         //Количество элементов на странице
         int countElement = 10;
         public ProductPage()
         {
             InitializeComponent();
-            ProductListView.ItemsSource = GetRows();
-          
+
+            var arrayMaterial = new List<MaterialType>
+            {
+             new MaterialType
+            {
+            ID = 0,
+            Title = "Все"
+            }
+            };
+            arrayMaterial.AddRange(db.context.MaterialType.ToList());
+            FilterComboBox.ItemsSource = arrayMaterial;
+            FilterComboBox.DisplayMemberPath = "Title";
+            FilterComboBox.SelectedValuePath = "ID";
+
+
+
+
             UpdateUI();
         }
+
 
         private void UpdateUI()
         {
             if (GetRows().Count > 10)
             {
-                
+
                 List<Product> displayProduct = GetRows().Skip((page - 1) * countElement).Take(countElement).ToList();
-                ProductListView.ItemsSource = displayProduct;
                 DisplayPagination(page);
+                ProductListView.ItemsSource = displayProduct;
+
             }
             else
             {
@@ -50,33 +69,40 @@ namespace ShopTiresAndDisksApp.View.Pages
         }
 
         /// <summary>
-        /// Формирование данные для вывода 
+        /// Формирование данных для вывода 
         /// </summary>
         /// <returns>
         /// Возвращает все данные из таблицы
         /// </returns>
         private List<Product> GetRows()
         {
+
             List<Product> arrayProduct = db.context.Product.ToList();
 
-            if (SearchTextBox.Text!=String.Empty && !String.IsNullOrWhiteSpace(SearchTextBox.Text))
+            //List<MaterialType> arrayMaterialTypes = db.context.MaterialType.ToList();
+            if (SearchTextBox.Text != String.Empty && !String.IsNullOrWhiteSpace(SearchTextBox.Text))
             {
-                arrayProduct=arrayProduct.Where(x => x.Title.ToUpper().Contains(SearchTextBox.Text.ToUpper()) || x.MaterialList.ToUpper().Contains(SearchTextBox.Text.ToUpper())).ToList();
+                arrayProduct = arrayProduct.Where(x => x.Title.ToUpper().Contains(SearchTextBox.Text.ToUpper()) || x.MaterialList.ToUpper().Contains(SearchTextBox.Text.ToUpper())).ToList();
             }
 
-            if (SortComboBox.SelectedIndex==1)
+
+
+
+            if (SortComboBox.SelectedIndex == 1)
             {
+
                 if (check)
-                {   
+                {
                     arrayProduct = arrayProduct.OrderByDescending(x => x.Title).ToList();
                 }
                 else
                 {
                     arrayProduct = arrayProduct.OrderBy(x => x.Title).ToList();
                 }
-                
+
+
             }
-            if (SortComboBox.SelectedIndex==2)
+            if (SortComboBox.SelectedIndex == 2)
             {
                 if (check)
                 {
@@ -86,9 +112,24 @@ namespace ShopTiresAndDisksApp.View.Pages
                 {
                     arrayProduct = arrayProduct.OrderBy(x => x.CostProduct).ToList();
                 }
+
+
             }
-            
+
+            if (materialId != 0)
+            {
+
+                arrayProduct = arrayProduct.Where(x => x.ProductMaterial.Join(Material).Material.MaterialTypeID == materialId).ToList();
+
+            }
+            else
+            {
+                arrayProduct = arrayProduct.ToList();
+            }
+
             return arrayProduct;
+
+
         }
         /// <summary>
         /// Подсчёт количества страниц,в пагинции
@@ -185,11 +226,16 @@ namespace ShopTiresAndDisksApp.View.Pages
 
         private void SortComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (SortComboBox.SelectedIndex != 0)
-            {
+            
                 UpdateUI();
-            }
+            
 
+        }
+
+        private void FilterComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            materialId = Convert.ToInt32(FilterComboBox.SelectedValue);
+            UpdateUI();
         }
     }
 }
