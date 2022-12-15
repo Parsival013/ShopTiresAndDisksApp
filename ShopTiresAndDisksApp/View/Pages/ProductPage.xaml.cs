@@ -57,6 +57,10 @@ namespace ShopTiresAndDisksApp.View.Pages
         private List<Product> GetRows()
         {
             List<Product> arrayProduct = db.context.Product.ToList();
+            if (SearchTextBox.Text!=String.Empty && !String.IsNullOrWhiteSpace(SearchTextBox.Text))
+            {
+                arrayProduct=arrayProduct.Where(x => x.Title.ToUpper().Contains(SearchTextBox.Text.ToUpper()) || x.MaterialList.ToUpper().Contains(SearchTextBox.Text.ToUpper())).ToList();
+            }
             return arrayProduct;
         }
         /// <summary>
@@ -129,6 +133,17 @@ namespace ShopTiresAndDisksApp.View.Pages
         {
             TextBlock textBlock = sender as TextBlock;
             page = Convert.ToInt32(textBlock.Text);
+            UpdateUI();
+        }
+
+        private void SearchTextBoxTextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateUI();
+        }
+
+        private void OrderButtonClick(object sender, RoutedEventArgs e)
+        {
+            UpdateUI();
         }
     }
 }
