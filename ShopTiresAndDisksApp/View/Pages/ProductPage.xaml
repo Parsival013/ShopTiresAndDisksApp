@@ -22,13 +22,14 @@
             </Grid.ColumnDefinitions>
             <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBoxTextChanged"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
-                <ComboBox x:Name="SortComboBox" SelectedIndex="0">
-                <ComboBoxItem>
+                <ComboBox x:Name="SortComboBox" SelectedIndex="0" SelectionChanged="SortComboBoxSelectionChanged">
+                    <ComboBoxItem>
+                        <TextBlock Text="без фильтрации"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
                     <TextBlock Text="По наименованию"/>
                 </ComboBoxItem>
-                <ComboBoxItem>
-                    <TextBlock Text="По остатку на складе"/>
-                </ComboBoxItem>
+                
                 <ComboBoxItem>
                     <TextBlock Text="По стоимости"/>
                 </ComboBoxItem>
